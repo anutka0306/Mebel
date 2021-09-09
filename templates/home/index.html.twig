@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ include('elements/header.html.twig') }}
+{% endblock %}
+    
+    {% block header_fixed %}
+        {{ include('elements/header-fixed.html.twig') }}
+    {% endblock %}
+    
+    {% block header_banner %}
+        {{ include('elements/header-banner.html.twig') }}
+    {% endblock %}
+    
+    {% block body %}
+        <!-- ADVANTAGES -->
+        {{ include ('elements/advantages.html.twig')}}
+
+        <!--ABOUT-->
+        {{ include ('elements/about.html.twig')}}
+
+
+        <!--CATALOG-->
+        {{ include ('elements/catalog-menu.html.twig')}}
+
+
+        <!--ADVANTAGES-2-->
+        {{ include ('elements/advantages2.html.twig')}}
+
+        <!--CATALOG PROD-->
+        {{ include ('elements/catalog-prod.html.twig')}}
+
+
+        <!--WORKS EXAMPLES-->
+        {{ include ('elements/works-examples.html.twig')}}
+
+
+        <!--PROD BY MATERIALS-->
+        {{ include ('elements/prod_by_materials.html.twig')}}
+
+
+        <!--PHOTO GALLERY-->
+        {{ include ('elements/photogallery.html.twig')}}
+    {% endblock %}

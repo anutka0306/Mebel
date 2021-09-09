@@ -1,19 +1,128 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mebel</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/montserrat-medium.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <!--Bootstrap 5.2-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.2/css/uikit.min.css" integrity="sha512-hM2N+uBhNm4nz5YZaKRNT48DLZuvGslKiGKl0MWpVD6DWudgUd5ghNVN20A9moDLhLdsqbUt3YKp2s6ZeQRiGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/hover-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/fbeb08ead3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.2/js/uikit.min.js" integrity="sha512-OSTRfXHexzhPF8VccjHh1s3/9nXkvzZVoctPeA6YGPYhaPoVEwXvXd74IuiwpUTp/OpIoMqm5dEgX9W2xK+ICg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.2/js/uikit-icons.min.js" integrity="sha512-pCn4YSCG+11Nq6MHxgcmh6IpaSMYbuJmXahX7AWINvUYXpK0yWQGGGeGBiGU23wLfnqEfnSC0+JKYdHdD8Xlsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+</head>
+
+<body>
+<div class="main container-fluid">
+    {% block header %}
+    {% endblock %}
+
+    {% block header_fixed %}
+    {% endblock %}
+
+    {% block header_banner %}
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+
+
+    <!--FOOTER-->
+    <footer class="container-fluid">
+        <div class="container footer__content">
+            <div class="footer__content_item">
+                <a href="#" class="footer-logo">
+                    <img src="images/logo-footer.png" alt="">
+                </a>
+            </div>
+            <div class="footer__content_item addr1">
+                <p class="footer__phone">
+                    +7(777)777-77-77
+                </p>
+                <p>Пн - пт, с 8:00 до 17:00</p>
+            </div>
+            <div class="footer__content_item addr2">
+                <p>Производство:</p>
+                <p>г. Москва</p>
+                <p>ул. Рябиновая 38 Б</p>
+            </div>
+            <div class="footer__content_item addr3">
+                <p>Офис:</p>
+                <p>г. Москва</p>
+                <p>ул. Дорогобужская 14, стр. 1</p>
+            </div>
+            <div class="footer__content_item footer__menu">
+                <a href="#">Столярное производство</a>
+                <a href="#">Меблировка под ключ</a>
+                <a href="#">Дизайн-проект</a>
+            </div>
+            <div class="footer__content_item footer__social">
+                <a href="#"><img src="images/instagram-footer.png" alt=""></a>
+                <a href="#"><img src="images/house-footer.png" alt=""></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <div id="button-up">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    let swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop:true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        coverflowEffect: {
+            rotate: 30,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+</body>
 </html>
