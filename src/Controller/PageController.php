@@ -34,9 +34,11 @@ class PageController extends AbstractController
      * @Route("/{token}", name="dynamic_pages",requirements={"token"= ".+\/$"})
      */
     public function index($token, Request $request){
-        $token = str_replace('/','', $token);
         if($page = $this->categoryRepository->findOneBy(['alias' => $token])){
-            return new Response('<p>hello from category</p>');
+           return $this->render('pages/category.html.twig');
+        }
+        elseif ($page = $this->subcategoryRepository->findOneBy(['alias'=>$token])){
+            return new Response('<p>hello from subcategory</p>');
         }
         return new Response('<p>'.$token.'</p>');
     }

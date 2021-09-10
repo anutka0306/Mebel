@@ -55,9 +55,15 @@ class Category
      */
     private $alias;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CategorySection::class, mappedBy="category_id", orphanRemoval=true)
+     */
+    private $section_id;
+
     public function __construct()
     {
         $this->subcategory = new ArrayCollection();
+        $this->section_id = new ArrayCollection();
     }
 
     public function __toString(){
@@ -167,6 +173,36 @@ class Category
     public function setAlias(string $alias): self
     {
         $this->alias = $alias;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CategorySection[]
+     */
+    public function getSectionId(): Collection
+    {
+        return $this->section_id;
+    }
+
+    public function addSectionId(CategorySection $sectionId): self
+    {
+        if (!$this->section_id->contains($sectionId)) {
+            $this->section_id[] = $sectionId;
+            $sectionId->setCategoryId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSectionId(CategorySection $sectionId): self
+    {
+        if ($this->section_id->removeElement($sectionId)) {
+            // set the owning side to null (unless already changed)
+            if ($sectionId->getCategoryId() === $this) {
+                $sectionId->setCategoryId(null);
+            }
+        }
 
         return $this;
     }

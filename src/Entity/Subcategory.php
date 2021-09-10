@@ -53,6 +53,12 @@ class Subcategory
      */
     private $alias;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=CategorySection::class, inversedBy="subcategory_id")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category_section_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,6 +144,18 @@ class Subcategory
     public function setAlias(string $alias): self
     {
         $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getCategorySectionId(): ?CategorySection
+    {
+        return $this->category_section_id;
+    }
+
+    public function setCategorySectionId(?CategorySection $category_section_id): self
+    {
+        $this->category_section_id = $category_section_id;
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace App\Service;
 
 use App\Entity\Category;
 use App\Entity\Subcategory;
+use App\Entity\CategorySection;
 use App\Repository\SubcategoryRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -39,7 +40,13 @@ class UrlGeneratorService
     }
 
     public function GenerateSubCategoryUrl(Subcategory $subcategory){
-        $itemPath = $subcategory->setAlias($subcategory->getParent()->getAlias().$subcategory->getAlias().'/');
+        $itemPath = $subcategory->setAlias($subcategory->getCategorySectionId()->getAlias().$subcategory->getAlias().'/');
+        $this->em->persist($itemPath);
+        $this->em->flush();
+    }
+
+    public function GenerateCategorySectionUrl(CategorySection $categorySection){
+        $itemPath = $categorySection->setAlias($categorySection->getCategoryId()->getAlias().$categorySection->getAlias().'/');
         $this->em->persist($itemPath);
         $this->em->flush();
     }

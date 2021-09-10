@@ -24,6 +24,7 @@ class SubcategoryCrudController extends AbstractCrudController
             TextField::new('title'),
             TextField::new('description'),
             AssociationField::new('parent'),
+            AssociationField::new('category_section_id'),
             TextField::new('alias'),
 
         ];

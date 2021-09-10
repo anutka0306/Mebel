@@ -10,18 +10,18 @@
             <div uk-slider class="uk-slider-about">
                 <ul class="uk-slider-items uk-child-width-1-1@s uk-grid">
                     <li>
-                        <video data-aos="fade-right" controls width="386" height="232"  name="media" poster="images/video-bg.jpg">
+                        <video data-aos="fade-right" controls width="386" height="232"  name="media" poster="{{ asset('images/video-bg.jpg') }}">
                             <source src="video/video-about.mp4?autoplay=false" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <img data-aos="fade-right" data-fancybox="gallery" src="images/about-img1.jpg" alt="">
+                        <img data-aos="fade-right" data-fancybox="gallery" src="{{ asset('images/about-img1.jpg') }}" alt="">
                     </li>
                     <li>
-                        <img data-aos="fade-right" data-fancybox="gallery" src="images/about-img2.jpg" alt="">
+                        <img data-aos="fade-right" data-fancybox="gallery" src="{{ asset('images/about-img2.jpg') }}" alt="">
                     </li>
                     <li>
-                        <img data-aos="fade-right" data-fancybox="gallery" src="images/about-img3.jpg" alt="">
+                        <img data-aos="fade-right" data-fancybox="gallery" src="{{ asset('images/about-img3.jpg') }}" alt="">
                     </li>
                 </ul>
                 <div class="uk-visible">
@@ -94,33 +94,33 @@
         <div class="about__carousel_slide">
             <div class="about__block_media-left d-flex flex-column">
                 <div class="drop__video">
-                    <video data-aos="fade-right" data-aos-duration="2000" controls="" width="386" height="232" name="media" poster="images/video-bg.jpg">
+                    <video data-aos="fade-right" data-aos-duration="2000" controls="" width="386" height="232" name="media" poster="{{ asset('images/video-bg.jpg') }}">
                         <source src="video/video-about.mp4?autoplay=false" type="video/mp4">
                     </video>
                 </div>
                 <div data-aos="fade-right" data-aos-duration="2000" class="d-flex align-items-center justify-content-between about__images">
-                    <img  data-fancybox="gallery" src="images/about-img1.jpg" alt="">
-                    <img data-fancybox="gallery" src="images/about-img2.jpg" alt="">
+                    <img  data-fancybox="gallery" src="{{ asset('images/about-img1.jpg') }}" alt="">
+                    <img data-fancybox="gallery" src="{{ asset('images/about-img2.jpg') }}" alt="">
                 </div>
             </div>
             <div data-aos="fade-right" data-aos-duration="2000" class="about__block_media-right">
-                <img data-fancybox="gallery" src="images/about-img3.jpg" alt="">
+                <img data-fancybox="gallery" src="{{ asset('images/about-img3.jpg') }}" alt="">
             </div>
         </div>
         <div class="about__carousel_slide ">
             <div class="about__block_media-left d-flex flex-column">
                 <div class="drop__video">
-                    <video controls="" width="386" height="232" name="media" poster="images/video-bg.jpg">
+                    <video controls="" width="386" height="232" name="media" poster="{{ asset('images/video-bg.jpg') }}">
                         <source src="video/video-about.mp4?autoplay=false" type="video/mp4">
                     </video>
                 </div>
                 <div class="d-flex align-items-center justify-content-between about__images">
-                    <img  data-fancybox="gallery" src="images/about-img1.jpg" alt="">
-                    <img data-fancybox="gallery" src="images/about-img2.jpg" alt="">
+                    <img  data-fancybox="gallery" src="{{ asset('images/about-img1.jpg') }}" alt="">
+                    <img data-fancybox="gallery" src="{{ asset('images/about-img2.jpg') }}" alt="">
                 </div>
             </div>
             <div class="about__block_media-right">
-                <img data-fancybox="gallery" src="images/about-img3.jpg" alt="">
+                <img data-fancybox="gallery" src="{{ asset('images/about-img3.jpg') }}" alt="">
             </div>
         </div>
         </ul>

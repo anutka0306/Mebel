@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use App\Entity\Subcategory;
+use App\Entity\CategorySection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -29,7 +30,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return[
-        MenuItem::linkToCrud('Разделы', 'fa fa-tags', Category::class),
+            MenuItem::linkToCrud('Разделы', 'fa fa-tags', Category::class),
+            MenuItem::linkToCrud('Секции раздела', 'fa fa-tags', CategorySection::class),
             MenuItem::linkToCrud('Подразделы', 'fa fa-tags', Subcategory::class),
             ];
     }
