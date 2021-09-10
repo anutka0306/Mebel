@@ -60,6 +60,11 @@ class Category
      */
     private $section_id;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $seo_text_hidden;
+
     public function __construct()
     {
         $this->subcategory = new ArrayCollection();
@@ -203,6 +208,18 @@ class Category
                 $sectionId->setCategoryId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSeoTextHidden(): ?string
+    {
+        return $this->seo_text_hidden;
+    }
+
+    public function setSeoTextHidden(?string $seo_text_hidden): self
+    {
+        $this->seo_text_hidden = $seo_text_hidden;
 
         return $this;
     }

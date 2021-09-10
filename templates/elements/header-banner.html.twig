@@ -1,6 +1,6 @@
 <div class="container-fluid header-banner">
     <div class="header-banner__content">
-        <h1><span>Собственное производство</span> мебели и предметов интерьера <span>в Москве</span></h1>
+        <h1><span>{% if h1 is defined %}{{ h1 }}{% else %}Собственное производство{% endif %}</span> мебели и предметов интерьера <span>в Москве</span></h1>
         <div class="button-with-circle">
             <div class="circle"></div>
             <button class="header-banner__btn">Консультация</button>

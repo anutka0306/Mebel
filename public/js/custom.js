@@ -76,6 +76,14 @@ $( document ).ready(function() {
         $(".load-more-btn .unloaded").css('display', 'flex');
         $(".load-more-btn .loaded").css('display', 'none');
     });
+
+    /* Seo контент - показать еще*/
+
+        $('.seo-btn').click(function(){
+        $('.seo-btn').css('display','none');
+        $('.seo-text-none').css('display','block');
+    });
+
 });
 
 /* AOS*/

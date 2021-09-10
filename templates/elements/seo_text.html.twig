@@ -1,0 +1,22 @@
+<section class="seo__text container-fluid">
+    <div class="seo-block">
+        <div class="container">
+            <div class="row">
+                <div class="seo-left col-md-6">
+                    {{ page.seoText|raw }}
+                </div>
+                <div class="seo-right col-md-6 d-flex justify-content-center ">
+                    <img class="seo-block__img" src="/images/seo-text-images/{{ page.seoImg }}" alt="*">
+                </div>
+
+                <div class="seo-left col-12">
+                    <div class="seo-text-none">
+                        {{ page.seoTextHidden|raw }}
+                    </div>
+                    <div class="seo-btn mbtn">Читать далее</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -9,7 +9,7 @@
     {% endblock %}
 
     {% block header_banner %}
-        {{ include('elements/header-banner.html.twig') }}
+        {{ include('elements/header-banner.html.twig',{'h1' : page.h1}) }}
     {% endblock %}
 
     {% block body %}
@@ -20,7 +20,7 @@
         {{ include ('elements/works-examples.html.twig')}}
 
         <!--CATALOG PROD-->
-        {{ include ('elements/catalog-prod.html.twig')}}
+        {{ include ('elements/catalog-prod.html.twig', {'categorySections': categorySections})}}
 
 
         <!--ADVANTAGES-2-->
@@ -28,7 +28,7 @@
 
 
         {# SEO TEXT#}
-
+        {{ include ('elements/seo_text.html.twig', {'page': page}) }}
 
         <!--PHOTO GALLERY-->
         {{ include ('elements/photogallery.html.twig')}}
