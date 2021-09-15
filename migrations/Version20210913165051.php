@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210908151645 extends AbstractMigration
+final class Version20210913165051 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,14 +20,14 @@ final class Version20210908151645 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE category ADD alias VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE subcategory ADD alias VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE service ADD seo_text LONGTEXT DEFAULT NULL, ADD seo_text_hidden LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE subcategory CHANGE category_section_id_id category_section_id_id INT NOT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE category DROP alias');
-        $this->addSql('ALTER TABLE subcategory DROP alias');
+        $this->addSql('ALTER TABLE service DROP seo_text, DROP seo_text_hidden');
+        $this->addSql('ALTER TABLE subcategory CHANGE category_section_id_id category_section_id_id INT DEFAULT NULL');
     }
 }

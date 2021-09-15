@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\Service;
 use App\Entity\Subcategory;
 use App\Entity\CategorySection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -33,6 +34,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Разделы', 'fa fa-tags', Category::class),
             MenuItem::linkToCrud('Секции раздела', 'fa fa-tags', CategorySection::class),
             MenuItem::linkToCrud('Подразделы', 'fa fa-tags', Subcategory::class),
+            MenuItem::linkToCrud('Услуги подразделов', 'fa fa-tags', Service::class),
             ];
     }
 }

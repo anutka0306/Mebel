@@ -9,6 +9,7 @@ use App\Entity\CategorySection;
 use App\Repository\SubcategoryRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Service;
 
 class UrlGeneratorService
 {
@@ -41,6 +42,12 @@ class UrlGeneratorService
 
     public function GenerateSubCategoryUrl(Subcategory $subcategory){
         $itemPath = $subcategory->setAlias($subcategory->getCategorySectionId()->getAlias().$subcategory->getAlias().'/');
+        $this->em->persist($itemPath);
+        $this->em->flush();
+    }
+
+    public function GenerateServiceUrl(Service $service){
+        $itemPath = $service->setAlias($service->getSubcategoryId()->getAlias().$service->getAlias().'/');
         $this->em->persist($itemPath);
         $this->em->flush();
     }

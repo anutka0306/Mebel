@@ -2,19 +2,19 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Subcategory;
+use App\Entity\Service;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CodeEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 
-class SubcategoryCrudController extends AbstractCrudController
+class ServiceCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Subcategory::class;
+        return Service::class;
     }
 
 
@@ -25,8 +25,7 @@ class SubcategoryCrudController extends AbstractCrudController
             TextField::new('h1'),
             TextField::new('title'),
             TextField::new('description'),
-            AssociationField::new('parent'),
-            AssociationField::new('category_section_id'),
+            AssociationField::new('subcategory_id'),
             TextField::new('alias'),
             CodeEditorField::new('seo_text'),
             CodeEditorField::new('seo_text_hidden'),

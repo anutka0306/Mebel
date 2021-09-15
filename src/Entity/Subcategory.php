@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SubcategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -58,6 +60,25 @@ class Subcategory
      * @ORM\JoinColumn(nullable=false)
      */
     private $category_section_id;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $seo_text_hidden;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Service::class, mappedBy="subcategory_id")
+     */
+    private $service;
+
+    public function __construct()
+    {
+        $this->service = new ArrayCollection();
+    }
+
+    public  function __toString(){
+        return (string) $this->getH1();
+    }
 
     public function getId(): ?int
     {
@@ -156,6 +177,48 @@ class Subcategory
     public function setCategorySectionId(?CategorySection $category_section_id): self
     {
         $this->category_section_id = $category_section_id;
+
+        return $this;
+    }
+
+    public function getSeoTextHidden(): ?string
+    {
+        return $this->seo_text_hidden;
+    }
+
+    public function setSeoTextHidden(?string $seo_text_hidden): self
+    {
+        $this->seo_text_hidden = $seo_text_hidden;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Service[]
+     */
+    public function getService(): Collection
+    {
+        return $this->service;
+    }
+
+    public function addService(Service $service): self
+    {
+        if (!$this->service->contains($service)) {
+            $this->service[] = $service;
+            $service->setSubcategoryId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeService(Service $service): self
+    {
+        if ($this->service->removeElement($service)) {
+            // set the owning side to null (unless already changed)
+            if ($service->getSubcategoryId() === $this) {
+                $service->setSubcategoryId(null);
+            }
+        }
 
         return $this;
     }

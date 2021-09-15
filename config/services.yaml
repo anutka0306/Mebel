@@ -29,3 +29,5 @@ services:
         tags: [ doctrine.orm.entity_listener ]
     App\Doctrine\GenerateCategorySectionAlias:
         tags: [ doctrine.orm.entity_listener ]
+    App\Doctrine\GenerateServiceAlias:
+        tags: [ doctrine.orm.entity_listener ]
