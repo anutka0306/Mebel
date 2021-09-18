@@ -41,7 +41,7 @@ class UrlGeneratorService
     }
 
     public function GenerateSubCategoryUrl(Subcategory $subcategory){
-        $itemPath = $subcategory->setAlias($subcategory->getCategorySectionId()->getAlias().$subcategory->getAlias().'/');
+        $itemPath = $subcategory->setAlias($subcategory->getCategorySectionId()->getCategoryId()->getAlias().$subcategory->getAlias().'/');
         $this->em->persist($itemPath);
         $this->em->flush();
     }
