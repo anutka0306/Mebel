@@ -846,6 +846,10 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
     background-color: #ea5e2c;
     color: rgb(255, 255, 255);
 }
+.catalog-menu__btn a, .catalog-menu__btn a:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
 .catalog-menu__block_media-mobile{
     display: none;
 }

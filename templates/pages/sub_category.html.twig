@@ -20,7 +20,7 @@
         {{ include ('elements/works-examples.html.twig')}}
 
         <!--CATALOG PROD-->
-        {{ include ('elements/catalog-prod-services.html.twig', {'services': services, 'sectionName': page.h1})}}
+        {{ include ('elements/catalog-prod-services.html.twig', {'services': services, 'sectionName': page.h1, 'categoryPath': page.categorySectionId.categoryId.alias})}}
 
 
         <!--ADVANTAGES-2-->
