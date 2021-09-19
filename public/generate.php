@@ -1,5 +1,5 @@
 <?php
-
+exit();
 function print_debug($data){
     echo '<pre>';
     var_dump($data);
