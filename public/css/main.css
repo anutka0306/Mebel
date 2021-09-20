@@ -1061,12 +1061,22 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
     position: relative;
     display: block;
     filter: initial;
+}
+.catalog-prod__slider_link a{
+    text-decoration: none;
+}
+.catalog-prod__block_menu_slider li{
+    filter: initial;
     transition: 0.5s;
 }
-.catalog-prod__slider_link:hover{
+.catalog-prod__block_menu_slider li:hover{
     filter:brightness(0.7);
     transition: 0.5s;
 }
+/*.catalog-prod__slider_link:hover{
+    filter:brightness(0.7);
+    transition: 0.5s;
+}*/
 
 /*.catalog-prod__slider_link:hover .catalog-prod__slider_img-title{
     color: #f25d2b;
