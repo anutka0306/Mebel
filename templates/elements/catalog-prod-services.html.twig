@@ -34,8 +34,9 @@
                             uk-child-width-1-2@m uk-child-width-1-1@s">
                                 {% for service in services %}
                                     <li>
+                                        <div class="black-linear-bg"></div>
                                     <a class="catalog-prod__slider_link" href="#">
-                                        <img  data-aos="flip-up" data-aos-duration="1000"  width="200" src="{{ asset('images/catalog-prod_1_1.jpg')}}" alt="">
+                                        <img  data-aos="flip-up" data-aos-duration="1000" style="width: 250px"  src="{{ asset('images/catalog-prod_1_1.jpg')}}" alt="">
                                         <div class="catalog-prod__slider_img-title">
                                             <hr>
                                             <span><a href="/{{ service.alias }}">{{ service.h1 }}</a> </span>

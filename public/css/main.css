@@ -1082,6 +1082,7 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
     font-family: "Montserrat";
     font-size: 16px;
     width: 100%;
+    min-height: 55px;
 }
 .catalog-prod__slider_img-title a:last-child{
     display: block;
@@ -1096,7 +1097,25 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
 .buttons-group__mobile{
     display: none;
 }
-
+@media (max-width: 1600px) {
+    .catalog-prod__block{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media (max-width: 1400px) {
+    .catalog-prod__slider_img-title a:last-child{
+        font-size: 13px;
+    }
+}
+@media (max-width: 1200px) {
+    .catalog-prod__slider_img-title a:last-child{
+        font-size: 16px;
+    }
+    .catalog-prod__slider_img-title{
+        max-width: 250px;
+    }
+}
 @media (max-width: 992px) {
     .catalog-prod__block{
         padding: 0;
@@ -1109,6 +1128,10 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
 }
 
 @media (max-width: 600px) {
+    .catalog-prod__slider_img-title{
+        left: 40px;
+        width: 200px;
+    }
     .catalog-prod__block_menu_slider{
         width: 280px;
     }
@@ -1992,6 +2015,24 @@ footer{
     transition: all .3s;
     border-radius: 5px;
     margin-top: 25px;
+}
+
+.uk-slider-items li{
+    position: relative;
+}
+.black-linear-bg{
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    z-index: 500;
+    background: -webkit-linear-gradient(
+            180deg, rgba(152, 207, 195, 0) 64%, rgba(1, 13, 14, .6) 81%);
+    background: -moz-linear-gradient(180deg, rgba(152, 207, 195, 0) 64%, rgba(1, 13, 14, .6) 81%);
+    background: linear-gradient(
+            180deg, rgba(152, 207, 195, 0) 64%, rgba(1, 13, 14, .6) 81%);
+}
+.catalog-prod__slider_img-title{
+    z-index: 1000;
 }
 
 
