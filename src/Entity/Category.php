@@ -65,6 +65,11 @@ class Category
      */
     private $seo_text_hidden;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $header_img;
+
     public function __construct()
     {
         $this->subcategory = new ArrayCollection();
@@ -220,6 +225,18 @@ class Category
     public function setSeoTextHidden(?string $seo_text_hidden): self
     {
         $this->seo_text_hidden = $seo_text_hidden;
+
+        return $this;
+    }
+
+    public function getHeaderImg(): ?string
+    {
+        return $this->header_img;
+    }
+
+    public function setHeaderImg(?string $header_img): self
+    {
+        $this->header_img = $header_img;
 
         return $this;
     }
