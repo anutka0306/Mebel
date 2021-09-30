@@ -343,6 +343,16 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
         height: calc(30vh - 0px) !important;
     }
 }
+@media (max-width: 640px) {
+    .header-banner-short{
+        height: calc(64vh - 0px) !important;
+    }
+}
+@media (max-width: 460px) {
+    .header-banner-short{
+        height: calc(40vh - 0px) !important;
+    }
+}
 .header-banner__content{
     text-align: center;
 }
