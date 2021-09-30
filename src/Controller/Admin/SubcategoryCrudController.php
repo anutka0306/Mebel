@@ -23,6 +23,7 @@ class SubcategoryCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             TextField::new('h1'),
+            ImageField::new('header_img')->setUploadDir('/public/images/header_images/')->setBasePath('/images/header_images/')->setHelp('рекомендуемые размеры 2000 х 940 px'),
             TextField::new('title'),
             TextField::new('description'),
             AssociationField::new('parent'),

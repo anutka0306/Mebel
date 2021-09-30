@@ -71,6 +71,11 @@ class Subcategory
      */
     private $service;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $header_img;
+
     public function __construct()
     {
         $this->service = new ArrayCollection();
@@ -219,6 +224,18 @@ class Subcategory
                 $service->setSubcategoryId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getHeaderImg(): ?string
+    {
+        return $this->header_img;
+    }
+
+    public function setHeaderImg(?string $header_img): self
+    {
+        $this->header_img = $header_img;
 
         return $this;
     }

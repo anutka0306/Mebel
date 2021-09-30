@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block header %}
-    {{ include('elements/header.html.twig', {'h1' : page.h1,  'shortHeader' : shortHeader}) }}
+    {{ include('elements/header.html.twig') }}
 {% endblock %}
 
     {% block header_fixed %}
@@ -9,7 +9,7 @@
     {% endblock %}
 
     {% block header_banner %}
-        {{ include('elements/header-banner.html.twig',{'h1' : page.h1}) }}
+        {{ include('elements/header-banner.html.twig',{'h1' : page.h1, 'headerImg' : page.headerImg, 'shortHeader' : shortHeader}) }}
     {% endblock %}
 
     {% block body %}
