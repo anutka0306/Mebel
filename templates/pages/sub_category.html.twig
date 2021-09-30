@@ -13,23 +13,22 @@
     {% endblock %}
 
     {% block body %}
-        <!-- ADVANTAGES -->
-        {{ include ('elements/advantages.html.twig')}}
-
-        <!--WORKS EXAMPLES-->
-        {{ include ('elements/works-examples.html.twig')}}
-
         <!--CATALOG PROD-->
         {{ include ('elements/catalog-prod-services.html.twig', {'services': services, 'sectionName': page.h1, 'categoryPath': page.categorySectionId.categoryId.alias})}}
 
-
-        <!--ADVANTAGES-2-->
-        {{ include ('elements/advantages2.html.twig')}}
-
+        <!-- ADVANTAGES -->
+        {{ include ('elements/advantages.html.twig')}}
 
         {# SEO TEXT#}
         {{ include ('elements/seo_text.html.twig', {'page': page}) }}
 
+        <!--WORKS EXAMPLES-->
+        {{ include ('elements/works-examples.html.twig')}}
+
+
+        <!--ADVANTAGES-2-->
+        {#{{ include ('elements/advantages2.html.twig')}}#}
+
         <!--PHOTO GALLERY-->
-        {{ include ('elements/photogallery.html.twig')}}
+       {# {{ include ('elements/photogallery.html.twig')}}#}
     {% endblock %}
