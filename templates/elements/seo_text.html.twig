@@ -1,13 +1,16 @@
+{% if page.seoText is not empty and page.seoText is not null %}
 <section class="seo__text container-fluid">
     <div class="seo-block">
         <div class="container">
             <div class="row">
-                <div class="seo-left col-md-6">
+                <div class="seo-left {% if page.seoImg is not null %}col-md-6 {% else %}col-md-12{% endif %}">
                     {{ page.seoText|raw }}
                 </div>
+                {% if page.seoImg is not null %}
                 <div class="seo-right col-md-6 d-flex justify-content-center ">
                     <img class="seo-block__img" src="/images/seo-text-images/{{ page.seoImg }}" alt="*">
                 </div>
+                {% endif %}
 
                 <div class="seo-left col-12">
                     <div class="seo-text-none">
@@ -20,3 +23,4 @@
         </div>
     </div>
 </section>
+{% endif %}
