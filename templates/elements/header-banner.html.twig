@@ -1,4 +1,4 @@
-<div class="container-fluid header-banner {% if shortHeader is defined and shortHeader == 1 %}header-banner-short{% endif %}" {% if headerImg is defined and headerImg is not null %}style="background-image: url('/images/header_images/{{ headerImg }}')" {% endif %}>
+<div class="container-fluid header-banner {% if shortHeader is defined and shortHeader == 1 %}header-banner-short{% endif %}" {% if headerImg is defined and headerImg is not null %}style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('/images/header_images/{{ headerImg }}')" {% endif %}>
     <div class="header-banner__content">
         {% if h1 is defined %}
             <h1>{{ h1}} <span>в Москве</span></h1>
