@@ -9,27 +9,26 @@
     {% endblock %}
 
     {% block header_banner %}
-        {{ include('elements/header-banner.html.twig',{'h1' : page.h1, 'headerImg' : page.headerImg}) }}
+        {{ include('elements/header-banner.html.twig',{'h1' : page.h1, 'headerImg' : page.headerImg, 'shortHeader' : shortHeader}) }}
     {% endblock %}
 
     {% block body %}
-        <!-- ADVANTAGES -->
-        {{ include ('elements/advantages.html.twig')}}
-
-        <!--WORKS EXAMPLES-->
-        {{ include ('elements/works-examples.html.twig')}}
-
         <!--CATALOG PROD-->
         {{ include ('elements/catalog-prod.html.twig', {'categorySections': categorySections})}}
 
-
-        <!--ADVANTAGES-2-->
-        {{ include ('elements/advantages2.html.twig')}}
-
+        <!-- ADVANTAGES -->
+        {{ include ('elements/advantages.html.twig')}}
 
         {# SEO TEXT#}
         {{ include ('elements/seo_text.html.twig', {'page': page}) }}
 
+        <!--WORKS EXAMPLES-->
+        {{ include ('elements/works-examples.html.twig')}}
+
+
+        <!--ADVANTAGES-2-->
+        {#{{ include ('elements/advantages2.html.twig')}}#}
+
         <!--PHOTO GALLERY-->
-        {{ include ('elements/photogallery.html.twig')}}
+        {#{{ include ('elements/photogallery.html.twig')}}#}
     {% endblock %}

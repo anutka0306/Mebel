@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block header %}
-    {{ include('elements/header.html.twig') }}
+    {{ include('elements/header.html.twig', {'h1' : page.h1,  'shortHeader' : shortHeader}) }}
 {% endblock %}
 
     {% block header_fixed %}

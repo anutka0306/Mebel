@@ -50,6 +50,7 @@ class PageController extends AbstractController
      * @Route("/{token}", name="dynamic_pages",requirements={"token"= ".+\/$"})
      */
     public function index($token, Request $request, CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository, ServiceRepository $serviceRepository){
+
         if($page = $this->categoryRepository->findOneBy(['alias' => $token])){
             $categorySection = $categorySectionRepository->findBy(['category_id' => $page->getId()]);
             foreach ($categorySection as $key => $categorySectionItem){
@@ -60,6 +61,7 @@ class PageController extends AbstractController
            return $this->render('pages/category.html.twig', [
                'page' => $page,
                'categorySections'=> $categorySection,
+               'shortHeader' => 1,
            ]);
         }
         elseif ($page = $this->subcategoryRepository->findOneBy(['alias'=>$token])){
@@ -67,6 +69,7 @@ class PageController extends AbstractController
            return $this->render('pages/sub_category.html.twig',[
                 'page'=>$page,
                 'services' => $services,
+                'shortHeader' => 1,
             ]);
         }
         return new Response('<p>'.$token.'</p>');
