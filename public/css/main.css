@@ -352,6 +352,9 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
     .header-banner-short{
         height: calc(100vh - 0px) !important;
     }
+    .header-banner-short .header-banner__content h1{
+        font-size: 18px;
+    }
 }
 @media (max-width: 460px) {
     .header-banner-short{
