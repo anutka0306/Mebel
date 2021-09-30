@@ -310,7 +310,7 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
 
 /* Header Banner*/
 .header-banner{
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
     background-image: url("/images/header-banner.jpg");
     background-repeat: no-repeat;
     background-position: bottom center;
