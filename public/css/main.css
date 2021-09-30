@@ -323,7 +323,25 @@ nav.top-menu .nav-link:hover, nav.top-menu__fixed .dropdown-item:hover, nav.top-
     position: relative;
 }
 .header-banner-short{
-    height: calc(100vh - 200px);
+    height: calc(50vh - 0px);
+}
+.header-banner-short .button-with-circle{
+    margin: 30px auto 0 auto;
+}
+@media (max-width: 1600px) {
+    .header-banner-short{
+        height: calc(40vh - 0px);
+    }
+}
+@media (max-width: 1300px) {
+    .header-banner-short{
+        height: calc(35vh - 0px);
+    }
+}
+@media (max-width: 814px) {
+    .header-banner-short{
+        height: calc(30vh - 0px) !important;
+    }
 }
 .header-banner__content{
     text-align: center;
