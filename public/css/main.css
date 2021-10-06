@@ -2083,5 +2083,41 @@ footer{
 .catalog-prod__slider_img-title{
     z-index: 1000;
 }
+.callback-popup-footer{
+
+}
+.callback-popup-footer input[type=submit]{
+    padding: 10px 50px;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 25px;
+    font-weight: 700;
+    width: 80%;
+    margin-right: 10px;
+}
+.callback-popup-footer .agreement_row{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.callback-popup-footer .agreement_row label a{
+    font-size: 12px;
+    color: #666;
+    margin-left: 5px;
+}
+.orange-popup__button button{
+    background: #EA5E2C !important;
+    border: none !important;
+    border-radius: 15px !important;
+}
+@media (max-width: 935px) {
+    .two-buttons__wrapper{
+        align-items: center;
+    }
+    .two-buttons__wrapper .orange-popup__button button{
+        width: 280px;
+        margin-bottom: 10px;
+    }
+}
 
 
