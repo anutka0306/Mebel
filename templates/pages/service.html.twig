@@ -15,15 +15,16 @@
     {% block body %}
 
 
+        <!--ABOUT-->
+        {{ include ('elements/about_service.html.twig', {'seoText': page.seoText})}}
+        {{ include('elements/popup/two_buttons_block.html.twig') }}
+
+
         <!-- ADVANTAGES -->
         {{ include ('elements/advantages.html.twig')}}
 
-        <!--ABOUT-->
-        {{ include ('elements/about.html.twig')}}
-        {{ include('elements/popup/two_buttons_block.html.twig') }}
-
-        {# SEO TEXT#}
-        {{ include ('elements/seo_text.html.twig', {'page': page}) }}
+        <!--CATALOG PROD-->
+        {{ include ('elements/catalog-prod-services.html.twig', {'services': services, 'sectionName': 'Вам может быть интересно', 'categoryPath': page.subcategoryId.categorySectionId.categoryId.alias})}}
 
 
         <!--PHOTO GALLERY-->

@@ -73,9 +73,11 @@ class PageController extends AbstractController
             ]);
         }
         elseif ($page = $this->serviceRepository->findOneBy(['alias' => $token])){
+            $services = $serviceRepository->findBy(['subcategory_id' => $page->getSubcategoryId()]);
             return $this->render('pages/service.html.twig',[
                 'page'=>$page,
                 'shortHeader' => 1,
+                'services' => $services,
             ]);
         }
         return new Response('<p>'.$token.'</p>');
