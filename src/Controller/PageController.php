@@ -72,6 +72,12 @@ class PageController extends AbstractController
                 'shortHeader' => 1,
             ]);
         }
+        elseif ($page = $this->serviceRepository->findOneBy(['alias' => $token])){
+            return $this->render('pages/service.html.twig',[
+                'page'=>$page,
+                'shortHeader' => 1,
+            ]);
+        }
         return new Response('<p>'.$token.'</p>');
     }
 
