@@ -2047,7 +2047,7 @@ footer{
 .seo-block .seo-left .seo-btn {
     max-width: 280px;
     text-align: center;
-    margin-left: auto;
+    /*margin-left: auto;*/
     margin-right: auto;
     height: 40px;
     line-height: 40px;
@@ -2119,5 +2119,21 @@ footer{
         margin-bottom: 10px;
     }
 }
-
+.three-buttons__wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.three-buttons__wrapper .seo-btn{
+    margin-right: 0 !important;
+    width: 280px;
+}
+.three-buttons__wrapper .orange-popup__button button{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    transition: all .3s;
+    border-radius: 5px !important;
+    margin-top: 25px;
+    width: 280px;
+    max-width: 280px;
+}
 
