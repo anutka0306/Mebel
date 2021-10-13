@@ -10,8 +10,7 @@ use App\Repository\SubcategoryRepository;
 
 class TopMenu extends AbstractController
 {
-
-    public function show(CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository){
+    private function getTopMenu(CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository){
         $topMenu = array();
         $categories = $categoryRepository->findAll();
         foreach ($categories as $category){
@@ -34,7 +33,17 @@ class TopMenu extends AbstractController
                 }
             }
         }
+        return $topMenu;
+    }
 
+    public function show(CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository){
+
+        $topMenu = $this->getTopMenu($categoryRepository, $categorySectionRepository, $subcategoryRepository);
         return $this->render('elements/header.html.twig', compact('topMenu'));
+    }
+
+    public  function showFixed(CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository){
+        $topMenu = $this->getTopMenu($categoryRepository, $categorySectionRepository, $subcategoryRepository);
+        return $this->render('elements/header-fixed.html.twig', compact('topMenu'));
     }
 }

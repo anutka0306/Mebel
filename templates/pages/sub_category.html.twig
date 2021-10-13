@@ -5,7 +5,7 @@
 {% endblock %}
 
     {% block header_fixed %}
-        {{ include('elements/header-fixed.html.twig') }}
+        {{ render(controller('App\\Widget\\TopMenu::showFixed')) }}
     {% endblock %}
 
     {% block header_banner %}

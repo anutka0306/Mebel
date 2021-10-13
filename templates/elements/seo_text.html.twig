@@ -24,4 +24,33 @@
         </div>
     </div>
 </section>
+
+    {% else %}
+    {# Убрать на prod #}
+        <section class="seo__text container-fluid">
+            <div class="seo-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="seo-left {% if page.seoImg is not null %}col-md-6 {% else %}col-md-12{% endif %}">
+                            <h2>Текст заглушка просто для демонстрации на стр., где текст не заполнен через админку. На продакшн уберем.</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                        {% if page.seoImg is not null %}
+                            <div class="seo-right col-md-6 d-flex justify-content-center ">
+                                <img class="seo-block__img" src="/images/seo-text-images/{{ page.seoImg }}" alt="*">
+                            </div>
+                        {% endif %}
+
+                        <div class="seo-left col-12">
+                            <div class="seo-text-none">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </div>
+                            {#<div class="seo-btn mbtn">Читать далее</div>#}
+                            {{ include ('elements/popup/three_buttons_block.html.twig') }}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
 {% endif %}
