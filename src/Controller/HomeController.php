@@ -44,26 +44,8 @@ class HomeController extends AbstractController
      */
     public function index(CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository): Response
     {
-        $topMenu = array();
-        $categories = $categoryRepository->findAll();
-        foreach ($categories as $category){
-            $topMenu[$category->getH1()] = array();
-            $topMenu[$category->getH1()]['url'] = $category->getAlias();
-            $sections = $categorySectionRepository->findBy(['category_id' => $category->getId()]);
-            $topMenu[$category->getH1()]['sections'] = array();
-            foreach ($sections as $section){
-                $topMenu[$category->getH1()]['sections'][$section->getName()] = array();
-                $topMenu[$category->getH1()]['sections'][$section->getName()]['subcategory'] = array();
-                $subcategories = $subcategoryRepository->findBy(['category_section_id'=>$section->getId()]);
-                foreach ($subcategories as $subcategory){
-                    $topMenu[$category->getH1()]['sections'][$section->getName()]['subcategory'][$subcategory->getH1()] = $subcategory->getAlias();
-                }
-            }
-        }
-
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'topMenu' => $topMenu,
         ]);
     }
 }

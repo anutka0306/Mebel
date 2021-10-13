@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block header %}
-    {{ include('elements/header.html.twig') }}
+    {{ render(controller('App\\Widget\\TopMenu::show')) }}
 {% endblock %}
     
     {% block header_fixed %}
@@ -13,7 +13,6 @@
     {% endblock %}
     
     {% block body %}
-        {{ dump(topMenu) }}
         <!-- ADVANTAGES -->
         {{ include ('elements/advantages.html.twig')}}
 

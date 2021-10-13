@@ -41,6 +41,11 @@ class CategorySection
      */
     private $alias;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $menu_name;
+
     public function __construct()
     {
         $this->subcategory_id = new ArrayCollection();
@@ -117,6 +122,18 @@ class CategorySection
     public function setAlias(?string $alias): self
     {
         $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getMenuName(): ?string
+    {
+        return $this->menu_name;
+    }
+
+    public function setMenuName(?string $menu_name): self
+    {
+        $this->menu_name = $menu_name;
 
         return $this;
     }

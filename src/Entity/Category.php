@@ -70,6 +70,16 @@ class Category
      */
     private $header_img;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $menu_img;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $menu_name;
+
     public function __construct()
     {
         $this->subcategory = new ArrayCollection();
@@ -237,6 +247,30 @@ class Category
     public function setHeaderImg(?string $header_img): self
     {
         $this->header_img = $header_img;
+
+        return $this;
+    }
+
+    public function getMenuImg(): ?string
+    {
+        return $this->menu_img;
+    }
+
+    public function setMenuImg(?string $menu_img): self
+    {
+        $this->menu_img = $menu_img;
+
+        return $this;
+    }
+
+    public function getMenuName(): ?string
+    {
+        return $this->menu_name;
+    }
+
+    public function setMenuName(?string $menu_name): self
+    {
+        $this->menu_name = $menu_name;
 
         return $this;
     }

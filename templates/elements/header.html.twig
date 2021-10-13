@@ -75,80 +75,34 @@
                             <img src="{{ asset('images/burger.png')}}">
                         </a>
                 </li>
-                {#<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/stoljarnoe-proizvodstvo/" id="navbarDropdown" role="button"  aria-expanded="false">
-                        Столярное производство
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-hover__first" aria-labelledby="navbarDropdown">
 
-                        <div class="drop__flex">
-
-                            <ul class="drop__ul">
-                                <li><strong>Отдельной мебели</strong></li>
-                                <li><a href="#" class="drop__link">Кухонь</a></li>
-                                <li><a href="#" class="drop__link">Мебели для кухни</a></li>
-                                <li><a href="/stoljarnoe-proizvodstvo/proizvodstvo-otdelnoj-mebeli/proizvodstvo-stolov/" class="drop__link">Столов</a></li>
-                                <li><a href="#" class="drop__link">Шкафов</a></li>
-                                <li><a href="#" class="drop__link">Стеновых панелей</a></li>
-                                <li><a href="#" class="drop__link">Перегородок</a></li>
-                                <li><a href="#" class="drop__link">Стеллажей</a></li>
-                                <li><a href="#" class="drop__link">Столешниц из дерева</a></li>
-                                <li><a href="#" class="drop__link">Кроватей</a></li>
-                                <li><a href="#" class="drop__link">Мягкой мебели</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <ul class="drop__ul">
-                                <li><strong>Мебель из материалов</strong></li>
-                                <li><a href="#" class="drop__link">Из массива</a></li>
-                                <li><a href="#" class="drop__link">Из шпонани</a></li>
-                                <li><a href="#" class="drop__link">Из МДФ</a></li>
-                                <li><a href="#" class="drop__link">Из ЛДСП</a></li>
-                                <li><a href="#" class="drop__link">Из ДСП</a></li>
-                                <li><a href="#" class="drop__link">Из ротанга</a></li>
-                                <li><a href="#" class="drop__link">Из дерева</a></li>
-                                <li><a href="#" class="drop__link">Из сосны</a></li>
-                                <li><a href="#" class="drop__link">Из дуба</a></li>
-                                <li><a href="#" class="drop__link">Из фанеры</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <ul class="drop__ul">
-                                <li><strong>Мебель на заказ</strong></li>
-                                <li><a href="#" class="drop__link">Корпусной мебели</a></li>
-                                <li><a href="#" class="drop__link">На заказ</a></li>
-                                <li><a href="#" class="drop__link">Фабрика мебели</a></li>
-                                <li><a href="#" class="drop__link">Российского производства</a></li>
-                                <li><a href="#" class="drop__link">Для ванных комнат</a></li>
-                                <li><a href="#" class="drop__link">Детской мебели</a></li>
-                                <li><a href="#" class="drop__link">По индивидуальным размерам</a></li>
-                                <li><a href="#" class="drop__link">Индивидуальное производство</a></li>
-                                <li><a href="#" class="drop__link">Реплики мебели</a></li>
-                                <li><a href="#" class="drop__link">Копии мебели</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <div class="drop__image">
-                                <img src="{{ asset('images/stolyarnoe-menu-img.jpg')}}" width="260" alt="Столярное производство">
-                                <strong>Столярное производство</strong>
-                            </div>
-                        </div>
-                    </ul>
-                </li>#}
 
                 {% for key, menuItem in topMenu %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ menuItem.url }}" id="navbarDropdown" role="button"  aria-expanded="false">
-                        {{ key }}
+                    <a class="nav-link dropdown-toggle" href="/{{ menuItem.url }}" id="navbarDropdown" role="button"  aria-expanded="false">
+                        {% if menuItem.menuName is null %}
+                            {{ key }}
+                        {% else %}
+                            {{ menuItem.menuName }}
+                        {% endif %}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-hover__first" aria-labelledby="navbarDropdown">
                     {% for sectionKey, section in menuItem.sections %}
                         <div class="drop__flex">
 
                             <ul class="drop__ul">
-                                <li><strong>{{ sectionKey }}</strong></li>
+                                {% if section.menuName is null %}
+                                    <li><strong>{{ sectionKey }}</strong></li>
+                                {% else %}
+                                    <li><strong>{{ section.menuName }}</strong></li>
+                                {% endif %}
                                 {% for subcategoryKey, subcategory in section.subcategory %}
-                                <li><a href="{{ subcategory }}" class="drop__link">{{ subcategoryKey }}</a></li>
+                                    {% if(subcategory.menuName is null) %}
+                                        <li><a href="/{{ subcategory.url }}" class="drop__link">{{ subcategoryKey }}</a></li>
+                                    {% else %}
+                                        <li><a href="/{{ subcategory.url }}" class="drop__link">{{ subcategory.menuName }}</a></li>
+                                    {% endif %}
+
                                 {% endfor %}
 
                             </ul>
@@ -156,46 +110,14 @@
                         {% endfor %}
                         <div class="drop__flex">
                             <div class="drop__image">
-                                <img src="{{ asset('images/stolyarnoe-menu-img.jpg')}}" width="260" alt="Столярное производство">
+                                {% if menuItem.img is not null %}
+                                <img src="/images/menu_images/{{ menuItem.img }}" width="260" alt="{{ key }}">
                                 <strong>{{ key }}</strong>
+                                {% endif %}
+
                             </div>
                         </div>
-                        {#<div class="drop__flex">
-                            <ul class="drop__ul">
-                                <li><strong>Мебель из материалов</strong></li>
-                                <li><a href="#" class="drop__link">Из массива</a></li>
-                                <li><a href="#" class="drop__link">Из шпонани</a></li>
-                                <li><a href="#" class="drop__link">Из МДФ</a></li>
-                                <li><a href="#" class="drop__link">Из ЛДСП</a></li>
-                                <li><a href="#" class="drop__link">Из ДСП</a></li>
-                                <li><a href="#" class="drop__link">Из ротанга</a></li>
-                                <li><a href="#" class="drop__link">Из дерева</a></li>
-                                <li><a href="#" class="drop__link">Из сосны</a></li>
-                                <li><a href="#" class="drop__link">Из дуба</a></li>
-                                <li><a href="#" class="drop__link">Из фанеры</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <ul class="drop__ul">
-                                <li><strong>Мебель на заказ</strong></li>
-                                <li><a href="#" class="drop__link">Корпусной мебели</a></li>
-                                <li><a href="#" class="drop__link">На заказ</a></li>
-                                <li><a href="#" class="drop__link">Фабрика мебели</a></li>
-                                <li><a href="#" class="drop__link">Российского производства</a></li>
-                                <li><a href="#" class="drop__link">Для ванных комнат</a></li>
-                                <li><a href="#" class="drop__link">Детской мебели</a></li>
-                                <li><a href="#" class="drop__link">По индивидуальным размерам</a></li>
-                                <li><a href="#" class="drop__link">Индивидуальное производство</a></li>
-                                <li><a href="#" class="drop__link">Реплики мебели</a></li>
-                                <li><a href="#" class="drop__link">Копии мебели</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <div class="drop__image">
-                                <img src="{{ asset('images/stolyarnoe-menu-img.jpg')}}" width="260" alt="Столярное производство">
-                                <strong>Столярное производство</strong>
-                            </div>
-                        </div>#}
+                        
                     </ul>
                 </li>
                 {% endfor %}

@@ -19,6 +19,7 @@ class CategorySectionCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
+            TextField::new('menu_name', 'Название в меню')->setHelp('Оставить пустым, если совпадает с именем'),
             AssociationField::new('category_id'),
             TextField::new('alias'),
         ];
