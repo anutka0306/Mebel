@@ -2137,3 +2137,23 @@ footer{
     max-width: 280px;
 }
 
+@media (max-width: 992px) {
+    .three-buttons__wrapper .orange-popup__button button{
+        width: 180px;
+        height: 40px;
+    }
+    .seo-block .seo-left .seo-btn{
+        width: 180px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .three-buttons__wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .three-buttons__wrapper .orange-popup__button button, .seo-block .seo-left .seo-btn{
+        width: 220px;
+    }
+}
+
