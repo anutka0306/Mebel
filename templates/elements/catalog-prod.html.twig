@@ -36,7 +36,11 @@
                                     <li>
                                         <div class="black-linear-bg"></div>
                                     <div class="catalog-prod__slider_link">
+                                        {% if item.seoImg is null %}
                                         <img  data-aos="flip-up" data-aos-duration="1000"  style="width: 250px" src="{{ asset('images/catalog-prod_1_1.jpg')}}" alt="">
+                                        {% else %}
+                                            <img  data-aos="flip-up" data-aos-duration="1000"  style="width: 250px" src="/images/seo-text-images/{{ item.seoImg }}" alt="{{ item.h1 }}">
+                                        {% endif %}
                                         <div class="catalog-prod__slider_img-title">
                                             <hr>
                                             <span><a href="/{{ item.alias }}">{{ item.h1 }}</a> </span>
