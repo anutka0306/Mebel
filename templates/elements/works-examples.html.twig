@@ -15,7 +15,12 @@
                                 <li>
                                     <div class="works__examples_images-block">
                                         <div class="works__examples_images_item">
+
+                                            {% if seoImg is defined and seoImg is not null%}
+                                                <img data-aos="fade-up" data-aos-duration="1000" data-fancybox="gallery" src="/images/seo-text-images/{{ seoImg }}" />
+                                            {% else %}
                                             <img data-aos="fade-up" data-aos-duration="1000" data-fancybox="gallery" src="{{ asset('images/work-ex1.jpg')}}" />
+                                            {% endif %}
                                         </div>
                                         <div class="works__examples_images_item">
                                             <img data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-fancybox="gallery" src="{{ asset('images/work-ex2.jpg')}}" />
