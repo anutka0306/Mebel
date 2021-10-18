@@ -13,11 +13,17 @@
                 {% endif %}
 
                 <div class="seo-left col-12">
-                    <div class="seo-text-none">
-                        {{ page.seoTextHidden|raw }}
-                    </div>
+                    {% if page.seoTextHidden is not null %}
+                        <div class="seo-text-none">
+                            {{ page.seoTextHidden|raw }}
+                        </div>
+                    {% endif %}
                     {#<div class="seo-btn mbtn">Читать далее</div>#}
-                    {{ include ('elements/popup/three_buttons_block.html.twig') }}
+                    {% if page.seoTextHidden is not null %}
+                        {{ include ('elements/popup/three_buttons_block.html.twig', {'readMore': true}) }}
+                    {% else %}
+                        {{ include ('elements/popup/three_buttons_block.html.twig', {'readMore': false}) }}
+                    {% endif %}
                 </div>
 
             </div>

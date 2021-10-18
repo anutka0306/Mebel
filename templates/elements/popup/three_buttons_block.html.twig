@@ -1,6 +1,8 @@
 
     <div class="three-buttons__wrapper">
-        <div class="seo-btn mbtn">Читать далее</div>
+        {% if readMore == true %}
+            <div class="seo-btn mbtn">Читать далее</div>
+        {% endif %}
         <div class="callback-btn orange-popup__button">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#callback_popup">Рассчитать стоимость</button>
         </div>
