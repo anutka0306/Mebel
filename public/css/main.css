@@ -2110,6 +2110,29 @@ footer{
     border: none !important;
     border-radius: 15px !important;
 }
+
+.vazno {
+    border-left: 4px solid #EA5E2C;
+    padding-left: 10px;
+}
+
+.li__sign{
+    display: block;
+    position: relative;
+}
+
+.li__sign::before{
+    content: '';
+    background: url(/images/li_sign.svg) no-repeat;
+    background-size: cover;
+    display: block;
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    top: 4px;
+    left: -17px;
+}
+
 @media (max-width: 935px) {
     .two-buttons__wrapper{
         align-items: center;
