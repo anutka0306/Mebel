@@ -32,7 +32,7 @@ $db = 'anutkaay_mebel';
 
 $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Don't connect");
 
-$category_name = 'Столярное производство';
+$category_name = 'Дизайн проект';
 $query = mysqli_query($connect, "SELECT * FROM `category` WHERE `h1` = '{$category_name}'");
 while($row = mysqli_fetch_assoc($query)){
     $category_path = $row['alias'];
