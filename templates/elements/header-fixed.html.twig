@@ -80,7 +80,7 @@
                                     {{ menuItem.menuName }}
                                 {% endif %}
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-hover__first" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-hover__{% if loop.index == 1 %}first{% elseif loop.index == 2 %}second{% elseif loop.index == 3 %}third{% elseif loop.index == 4 %}four{% endif %}" aria-labelledby="navbarDropdown">
                                 {% for sectionKey, section in menuItem.sections %}
                                     <div class="drop__flex">
 
