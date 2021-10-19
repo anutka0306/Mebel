@@ -23,6 +23,7 @@ class CategoryCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             TextField::new('h1'),
+            TextField::new('alias'),
             TextField::new('menu_name', 'Название в меню')->setHelp('Оставить пустым, если совпадает с H1'),
             ImageField::new('menu_img', 'Картинка в выпадающем меню')->setUploadDir('/public/images/menu_images/')->setBasePath('/images/menu_images/')->setHelp('рекомендуемые размеры 260 x 247 px'),
             ImageField::new('header_img')->setUploadDir('/public/images/header_images/')->setBasePath('/images/header_images/')->setHelp('рекомендуемые размеры 2000 х 940 px'),
