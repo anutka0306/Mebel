@@ -15,8 +15,6 @@
     {% endblock %}
 
     {% block body %}
-        <!--CATALOG PROD-->
-        {{ include ('elements/catalog-prod-services.html.twig', {'services': services, 'sectionName': page.h1, 'categoryPath': page.categorySectionId.categoryId.alias})}}
 
         <!-- ADVANTAGES -->
         {{ include ('elements/advantages.html.twig')}}
@@ -26,6 +24,9 @@
 
         <!--WORKS EXAMPLES-->
         {{ include ('elements/works-examples.html.twig', {'seoImg': page.seoImg})}}
+
+        <!--CATALOG PROD-->
+        {{ include ('elements/catalog-prod-services.html.twig', {'services': subcategories, 'sectionName': page.categorySectionId.name, 'categoryPath': page.categorySectionId.categoryId.alias})}}
 
 
         <!--ADVANTAGES-2-->

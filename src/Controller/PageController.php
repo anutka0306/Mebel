@@ -66,9 +66,11 @@ class PageController extends AbstractController
         }
         elseif ($page = $this->subcategoryRepository->findOneBy(['alias'=>$token])){
             $services = $serviceRepository->findBy(['subcategory_id' => $page->getId()]);
+            $subcategories = $this->getSubcategoriesFromSection($page->getCategorySectionId()->getId(),$subcategoryRepository);
            return $this->render('pages/sub_category.html.twig',[
                 'page'=>$page,
                 'services' => $services,
+                'subcategories' => $subcategories,
                 'shortHeader' => 1,
             ]);
         }
