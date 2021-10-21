@@ -22,21 +22,17 @@
         <div class="collapse navbar-collapse" id="navbarMobile">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/stoljarnoe-proizvodstvo/">
-                        Столярное производство
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Меблировка
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Дизайн-проект
-                    </a>
-                </li>
+                {% for key, menuItem in topMenu %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/{{ menuItem.url }}">
+                            {% if menuItem.menuName is null %}
+                                {{ key }}
+                            {% else %}
+                                {{ menuItem.menuName }}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#">
                         О компании
@@ -123,54 +119,6 @@
                 </li>
                 {% endfor %}
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"  aria-expanded="false">
-                        Меблировка
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-hover__third" aria-labelledby="navbarDropdown">
-
-                        <div class="drop__flex">
-
-                            <ul class="drop__ul">
-                                <li><strong>Для физ. лиц</strong></li>
-                                <li><a href="#" class="drop__link">Квартиры</a></li>
-                                <li><a href="#" class="drop__link">Коттеджа</a></li>
-                                <li><a href="#" class="drop__link">Студии</a></li>
-                                <li><a href="#" class="drop__link">Дома</a></li>
-                                <li><a href="#" class="drop__link">Дачи</a></li>
-                                <li><a href="#" class="drop__link">Комнаты</a></li>
-                                <li><a href="#" class="drop__link">Прихожей</a></li>
-                                <li><a href="#" class="drop__link">Гостиной</a></li>
-                                <li><a href="#" class="drop__link">Спальни</a></li>
-                                <li><a href="#" class="drop__link">Кухни	</a></li>
-                                <li><a href="#" class="drop__link">Ванной</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <ul class="drop__ul">
-                                <li><strong>Для юр. лиц</strong></li>
-                                <li><a href="#" class="drop__link">Бара</a></li>
-                                <li><a href="#" class="drop__link">Ресторана</a></li>
-                                <li><a href="#" class="drop__link">Кафе</a></li>
-                                <li><a href="#" class="drop__link">Магазина</a></li>
-                                <li><a href="#" class="drop__link">Бутика</a></li>
-                                <li><a href="#" class="drop__link">Гостиницы</a></li>
-                                <li><a href="#" class="drop__link">Офиса	</a></li>
-                                <li><a href="#" class="drop__link">Помещения	</a></li>
-                                <li><a href="#" class="drop__link">Ресепшн</a></li>
-                                <li><a href="#" class="drop__link">Переговорной	</a></li>
-                                <li><a href="#" class="drop__link">Кабинета</a></li>
-                                <li><a href="#" class="drop__link">Опенспейса</a></li>
-                            </ul>
-                        </div>
-                        <div class="drop__flex">
-                            <div class="drop__image">
-                                <img src="{{ asset('images/stolyarnoe-menu-img.jpg')}}" width="260" alt="Меблировка">
-                                <strong>Меблировка</strong>
-                            </div>
-                        </div>
-                    </ul>
-                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-expanded="false">
