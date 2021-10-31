@@ -44,8 +44,10 @@ class HomeController extends AbstractController
      */
     public function index(CategoryRepository $categoryRepository, CategorySectionRepository $categorySectionRepository, SubcategoryRepository $subcategoryRepository): Response
     {
+        $categories = $categoryRepository->findAll();
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'categories' => $categories,
         ]);
     }
 }
