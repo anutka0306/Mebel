@@ -19,14 +19,32 @@
             <div class="collapse navbar-collapse" id="navbarMobile">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     {% for key, menuItem in topMenu %}
-                        <li class="nav-item">
-                        <a class="nav-link" href="/{{ menuItem.url }}">
+                        <li class="nav-item dropdown">
+                       {# <a class="nav-link" href="/{{ menuItem.url }}">#}
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {% if menuItem.menuName is null %}
                                 {{ key }}
                             {% else %}
                                 {{ menuItem.menuName }}
                             {% endif %}
                         </a>
+                            <ul class="dropdown-menu dropdown-menu_mobile__overflow" aria-labelledby="navbarDropdown">
+                                {% for sectionKey, section in menuItem.sections %}
+                                <li class="nav-item dropdown">
+                                    {{ sectionKey }}
+                                    <ul>
+                                        {% for subcategoryKey, subcategory in section.subcategory %}
+                                            {% if(subcategory.menuName is null) %}
+                                                <li><a href="/{{ subcategory.url }}" class="drop__link">{{ subcategoryKey }}</a></li>
+                                            {% else %}
+                                                <li><a href="/{{ subcategory.url }}" class="drop__link">{{ subcategory.menuName }}</a></li>
+                                            {% endif %}
+
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
                     </li>
                     {% endfor %}
                     <li class="nav-item dropdown">
@@ -37,7 +55,7 @@
                     <a class="nav-link" href="#">Контакты</a>
 
                 </ul>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: none">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="{{ asset('images/search-icon.png')}}" alt="Поиск">
@@ -59,7 +77,7 @@
             <!--Обычное меню-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="display: none">
                         <!--Extra menu burger-->
                         <a href="#" class="extra-menu nav-link">
                             <!--<i class="fas fa-bars"></i>-->
@@ -167,7 +185,7 @@
                         </div>
                     </div>
                 </ul>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: none">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle search__icon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="{{ asset('images/search-icon.png')}}" alt="Поиск">

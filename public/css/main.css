@@ -2159,6 +2159,24 @@ footer{
     width: 280px;
     max-width: 280px;
 }
+.dropdown-menu_mobile__overflow{
+    overflow: auto;
+    max-height: 82vh;
+}
+
+@media (max-width: 991px) {
+    nav.top-menu__fixed .dropdown-toggle::after, nav.top-menu .dropdown-toggle::after{
+        display: block;
+        content: '';
+        width: 5px;
+        height: 5px;
+        margin-left: 5px;
+    }
+    nav.top-menu__fixed .dropdown-toggle, nav.top-menu .dropdown-toggle{
+        display: flex;
+        align-items: center;
+    }
+}
 
 @media (max-width: 992px) {
     .three-buttons__wrapper .orange-popup__button button{
