@@ -36,7 +36,10 @@
 
 
         <!--PROD BY MATERIALS-->
-        {{ include ('elements/prod_by_materials.html.twig')}}
+        {#{{ include ('elements/prod_by_materials.html.twig')}}#}
+
+        {# SEO TEXT#}
+        {{ include ('elements/seo_text.html.twig', {'mainPage': true}) }}
 
 
         <!--PHOTO GALLERY-->
