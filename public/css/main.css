@@ -2235,5 +2235,15 @@ footer{
     .three-buttons__wrapper .orange-popup__button button, .seo-block .seo-left .seo-btn{
         width: 220px;
     }
+    .contacts-page__image{
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .contct-form__wrapper{
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
