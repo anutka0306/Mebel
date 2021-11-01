@@ -73,6 +73,33 @@
         $('#callback_popup').modal('hide');
     }
 
+    let my_func_с = function (event){
+        event.preventDefault();
+
+        let email_field = $(this).find( "input[name=user_email]" );
+        if (!email_field.length) {
+            /*email_field = $(this).find( "input[name=pagetitle]" );*/
+            alert('Поле E-mail должно быть заполнено!');
+            return false;
+        }
+        let email = email_field.val();
+
+        if(!validateEmail(email)){
+            alert('Некорректный E-mail адрес.');
+            return false;
+        }
+       let message_field = $(this).find("textarea[name=user_message]");
+        let message = message_field.val();
+
+        sendContactForm('/contact_form', email, message);
+        console.log('Send: ' + email + ' ' + message);
+
+    }
+
+    function validateEmail(email) {
+        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        return pattern.test(email);
+    }
 
 
     $( document ).ready(function() {
@@ -86,6 +113,9 @@
 
         let form = document.getElementById('call-form-n');
         form.addEventListener('submit', my_func, true);
+
+        let form_c = document.getElementById('call-form-c');
+        form_c.addEventListener('submit', my_func_с, true);
 
     });
 
@@ -108,5 +138,32 @@
             }
         });
     }
+
+    function sendContactForm(url, email, message) {
+        $.ajax({
+            url:     url,
+            type:     "POST", //метод отправки
+            dataType: "html", //формат данных
+
+            data: {
+                'email' : email,
+                'message' : message,
+            },
+            success: function(response) { //Данные отправлены успешно
+                $("#call-form-c").hide();
+                $('#contactForm_response').html('<p style="text-align: center; font-weight: 700; padding: 20px;">Спасибо! Ваше сообщение отправлено.</p>');
+                 console.log(response);
+            },
+            error: function(response) { // Данные не отправлены
+                console.log('error');
+            }
+        });
+    }
+
+
+    //Contact Form
+    $('#call-form-c').submit(function (e){
+        e.preventDefault();
+    });
 
 </script>

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ render(controller('App\\Widget\\TopMenu::show')) }}
+{% endblock %}
+
+    {% block header_fixed %}
+        {{ render(controller('App\\Widget\\TopMenu::showFixed')) }}
+    {% endblock %}
+
+    {% block header_banner %}
+        {{ include('elements/header-banner.html.twig',{'h1' : 'Контакты'}) }}
+    {% endblock %}
+
+{% block body %}
+    <div class="container contacts-page__wrapper">
+        <div class="contacts-page__image">
+            <img src="{{ asset('images/abugera-contacts-img.jpg') }}" alt="Производство мебели в москве Abugera">
+        </div>
+        <div class="contacts-page__content">
+            <h2>Наши контакты</h2>
+            <span>Написать:&nbsp;<u><a href="mailto:zakaz@abugera.ru">zakaz@abugera.ru</a></u></span>
+            <p>Позвонить:&nbsp;<a href="tel:+79268255055"><u>+7 (926) 825-50-55</u></a></p>
+            <span><a href="https://wa.me/79268255055" target="_blank"><u>Написать в WhatsApp</u></a></span>
+            <div class="text-box">
+                <p>Адрес производства:</p>
+                <p>Москва, ул. Рябиновая, д. 38Б, стр.9</p>
+            </div>
+            <div class="text-box">
+                <p><span>ИП Бугера Алёна Вячеславовна</span></p>
+
+                <p><span>ИНН 772872067843</span></p>
+
+                <p><span>ОГРНИП 315774600244665</span></p>
+
+                <p><span>от 22.07.2015</span></p>
+
+            </div>
+
+            {{ include('elements/ajax/contact_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

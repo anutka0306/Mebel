@@ -1,0 +1,29 @@
+<div class="contct-form__wrapper">
+    <p class="contact-form__title">Напишите нам</p>
+    <small>Здесь вы можете оставить заявку или задать интересующие вас вопросы.</small>
+    <form class="ajax_form-c" action="" method="post" id="call-form-c">
+        <div class="mb-3">
+
+            <input type="email" name="user_email" class="form-control" id="exampleFormControlInput1" placeholder="Email*">
+        </div>
+        <div class="mb-3">
+
+            <textarea class="form-control" name="user_message" id="exampleFormControlTextarea1" rows="6" placeholder="Сообщение*"></textarea>
+        </div>
+        <div class="callback-popup-footer d-flex justify-content-center flex-column align-items-center">
+            <input type="submit" name="submit" class="btn" value="Отправить" style="border: 2px solid #EA5E2C;">
+            <div class="agreement_row">
+                <input type="checkbox" name="agreement" id="agreement" checked="" required="">
+                <label for="agreement">
+                    <a href="/agreement/" target="_blank">Согласен с политикой конфиденциальности</a>
+                </label>
+            </div>
+
+            <input type="hidden" name="af_action" value="8566d34660c02b3a933bde1b479492cb">
+        </div>
+    </form>
+    <div id="contactForm_response"></div>
+</div>
+
+
+

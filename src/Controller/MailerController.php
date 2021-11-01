@@ -45,6 +45,27 @@ class MailerController extends AbstractController
         return new JsonResponse(['success'=>'<p>Спасибо! Ваша заявка отправлена.</p>']);
     }
 
+
+    /**
+     * @Route("/contact_form", name="contact_form")
+     */
+    public function contact_form(Request $request, MailerInterface $mailer){
+        $to = explode(',',$this->getTo_salonWithout() );
+        foreach ($to as $recipient){
+            $email = (new Email())
+                ->from('robot@mirakpp.ru')
+                ->to((string)$recipient)
+                ->subject('Сообщение со страницы Контакты')
+                ->html('<p>Сообщение со страницы Контакты</p>
+             <p>Email отправителя: ' . $request->get('email') . '</p>
+            <p>Сообщение: ' . $request->get('message') . '</p>'
+                );
+            $mailer->send($email);
+        }
+
+        return new JsonResponse(['success'=>'<p>Спасибо! Ваше сообщение отарвлено.</p>']);
+    }
+
     public function addEmail($email, ValidatorInterface $validator){
         $emailConstraint = array(
             new Assert\Email(),
