@@ -2040,6 +2040,7 @@ footer{
 .seo-block__img {
     width: 80%;
     border-radius: 20px;
+    height: fit-content;
 }
 .seo-block .seo-left .seo-text-none {
     display: none;
