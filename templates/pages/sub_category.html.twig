@@ -16,11 +16,12 @@
 
     {% block body %}
 
-        <!-- ADVANTAGES -->
-        {{ include ('elements/advantages.html.twig')}}
 
         {# SEO TEXT#}
         {{ include ('elements/seo_text.html.twig', {'page': page}) }}
+
+        <!-- ADVANTAGES -->
+        {{ include ('elements/advantages.html.twig')}}
 
         <!--WORKS EXAMPLES-->
         {{ include ('elements/works-examples.html.twig', {'seoImg': page.seoImg})}}
