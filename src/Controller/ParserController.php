@@ -58,7 +58,7 @@ class ParserController extends AbstractController
                 $this->em->flush();
                 var_dump('yes');
             }else{
-                var_dump($text);
+               /* var_dump($text);*/
             }
             $my_array[] = $element;
         }
