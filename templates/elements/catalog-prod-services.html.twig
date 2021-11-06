@@ -34,7 +34,7 @@
                             uk-child-width-1-2@m uk-child-width-1-1@s">
                                 {% for service in services %}
                                     <li>
-                                        <div class="black-linear-bg"></div>
+                                        <a href="/{{ service.alias }}" class="black-linear-bg"></a>
                                     <div class="catalog-prod__slider_link" href="#">
                                         {% if service.seoImg is null %}
                                             <img  data-aos="flip-up" data-aos-duration="1000"  style="width: 250px" src="{{ asset('images/catalog-prod_1_1.jpg')}}" alt="">
